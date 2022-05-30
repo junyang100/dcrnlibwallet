@@ -192,9 +192,9 @@ func (mw *MultiWallet) SpvSync() error {
 	}
 
 	addr := &net.TCPAddr{IP: net.ParseIP("::1"), Port: 0}
+	fmt.Println(addr.IP.String())
 	addrManager := addrmgr.New(mw.rootDir, net.LookupIP) // TODO: be mindful of tor
 	lp := p2p.NewLocalPeer(mw.chainParams, addr, addrManager)
-
 	var validPeerAddresses []string
 	peerAddresses := mw.ReadStringConfigValueForKey(SpvPersistentPeerAddressesConfigKey)
 	if peerAddresses != "" {
