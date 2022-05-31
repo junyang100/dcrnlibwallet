@@ -1,6 +1,6 @@
 # dcrlibwallet
 
-[![Build Status](https://github.com/planetdecred/dcrlibwallet/workflows/Build/badge.svg)](https://github.com/planetdecred/dcrlibwallet/actions)
+[![Build Status](https://github.com/junyang100/dcrnlibwallet/workflows/Build/badge.svg)](https://github.com/junyang100/dcrnlibwallet/actions)
 
 A Decred wallet library written in golang for [dcrwallet](https://github.com/decred/dcrwallet)
 
@@ -14,8 +14,8 @@ A Decred wallet library written in golang for [dcrwallet](https://github.com/dec
 To build this libary, clone the project
 
 ```bash
-go get -t github.com/planetdecred/dcrlibwallet
-cd $GOPATH/src/github.com/planetdecred/dcrlibwallet/
+go get -t github.com/junyang100/dcrnlibwallet
+cd $GOPATH/src/github.com/junyang100/dcrnlibwallet/
 ```
 
 and run the following commands in dcrlibwallet directory.

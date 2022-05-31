@@ -12,8 +12,8 @@ import (
 	"github.com/decred/dcrwallet/errors/v2"
 	w "github.com/decred/dcrwallet/wallet/v3"
 	"github.com/decred/dcrwallet/walletseed"
-	"github.com/planetdecred/dcrlibwallet/internal/loader"
-	"github.com/planetdecred/dcrlibwallet/txindex"
+	"github.com/junyang100/dcrnlibwallet/internal/loader"
+	"github.com/junyang100/dcrnlibwallet/txindex"
 )
 
 type Wallet struct {

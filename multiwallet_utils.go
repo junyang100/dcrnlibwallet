@@ -8,9 +8,9 @@ import (
 	"github.com/asdine/storm"
 	"github.com/decred/dcrwallet/errors/v2"
 	w "github.com/decred/dcrwallet/wallet/v3"
+	"github.com/junyang100/dcrnlibwallet/spv"
 	"github.com/kevinburke/nacl"
 	"github.com/kevinburke/nacl/secretbox"
-	"github.com/planetdecred/dcrlibwallet/spv"
 	"golang.org/x/crypto/scrypt"
 )
 

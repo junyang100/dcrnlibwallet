@@ -27,8 +27,7 @@ require (
 	github.com/kevinburke/nacl v0.0.0-20190829012316-f3ed23dbd7f8
 	github.com/onsi/ginkgo v1.8.0
 	github.com/onsi/gomega v1.5.0
-	github.com/planetdecred/dcrlibwallet v0.0.0-00010101000000-000000000000
-	github.com/planetdecred/dcrlibwallet/spv v0.0.0-00010101000000-000000000000
+	github.com/junyang100/dcrnlibwallet/spv v0.0.0-00010101000000-000000000000
 	go.etcd.io/bbolt v1.3.3
 	golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550
 	golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e
@@ -37,9 +36,7 @@ require (
 replace (
 	decred.org/dcrwallet => decred.org/dcrwallet v1.2.3-0.20191024200307-d273b5687adf
 	github.com/decred/dcrwallet/wallet/v3 => github.com/raedahgroup/dcrwallet/wallet/v3 v3.2.1-badger
-	github.com/planetdecred/dcrlibwallet/spv => ./spv
+	github.com/junyang100/dcrnlibwallet/spv => ./spv
 )
 
 go 1.13
-
-replace github.com/planetdecred/dcrlibwallet => github.com/junyang100/dcrnlibwallet v1.5.5

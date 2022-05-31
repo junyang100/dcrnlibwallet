@@ -10,7 +10,7 @@ import (
 	"github.com/decred/dcrwallet/errors/v2"
 	"github.com/decred/dcrwallet/p2p/v2"
 	w "github.com/decred/dcrwallet/wallet/v3"
-	"github.com/planetdecred/dcrlibwallet/spv"
+	"github.com/junyang100/dcrnlibwallet/spv"
 )
 
 // reading/writing of properties of this struct are protected by mutex.x
