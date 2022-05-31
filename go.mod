@@ -1,6 +1,8 @@
 module github.com/junyang100/dcrnlibwallet
 
 require (
+	github.com/AndreasBriese/bbloom v0.0.0-20190825152654-46b345b51c96 // indirect
+	github.com/DataDog/zstd v1.5.2 // indirect
 	github.com/Decred-Next/dcrnd/chaincfg/v3 v3.0.0-20220525021848-36e3e1b88179
 	github.com/asdine/storm v0.0.0-20190216191021-fe89819f6282
 	github.com/decred/dcrd/addrmgr v1.1.0
@@ -23,14 +25,17 @@ require (
 	github.com/decred/dcrwallet/walletseed v1.0.1
 	github.com/decred/slog v1.0.0
 	github.com/dgraph-io/badger v1.5.4
+	github.com/dgryski/go-farm v0.0.0-20200201041132-a6ae2369ad13 // indirect
 	github.com/jrick/logrotate v1.0.0
+	github.com/junyang100/dcrnlibwallet/spv v0.0.0-00010101000000-000000000000
 	github.com/kevinburke/nacl v0.0.0-20190829012316-f3ed23dbd7f8
 	github.com/onsi/ginkgo v1.8.0
 	github.com/onsi/gomega v1.5.0
-	github.com/junyang100/dcrnlibwallet/spv v0.0.0-00010101000000-000000000000
+	github.com/pkg/errors v0.9.1 // indirect
 	go.etcd.io/bbolt v1.3.3
 	golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550
 	golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e
+	google.golang.org/appengine v1.6.7 // indirect
 )
 
 replace (
