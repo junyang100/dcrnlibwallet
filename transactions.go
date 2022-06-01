@@ -6,8 +6,8 @@ import (
 
 	"github.com/asdine/storm"
 	"github.com/decred/dcrd/chaincfg/chainhash"
-	"github.com/planetdecred/dcrlibwallet/txhelper"
-	"github.com/planetdecred/dcrlibwallet/txindex"
+	"github.com/junyang100/dcrnlibwallet/txhelper"
+	"github.com/junyang100/dcrnlibwallet/txindex"
 )
 
 const (

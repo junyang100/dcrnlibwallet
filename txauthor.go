@@ -13,7 +13,7 @@ import (
 	w "github.com/decred/dcrwallet/wallet/v3"
 	"github.com/decred/dcrwallet/wallet/v3/txauthor"
 	"github.com/decred/dcrwallet/wallet/v3/txrules"
-	"github.com/planetdecred/dcrlibwallet/txhelper"
+	"github.com/junyang100/dcrnlibwallet/txhelper"
 )
 
 type TxAuthor struct {

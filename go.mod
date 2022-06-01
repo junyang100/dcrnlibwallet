@@ -1,4 +1,4 @@
-module github.com/planetdecred/dcrlibwallet
+module github.com/junyang100/dcrnlibwallet
 
 require (
 	github.com/AndreasBriese/bbloom v0.0.0-20190306092124-e2d15f34fcf9 // indirect
@@ -30,11 +30,11 @@ require (
 	github.com/dgryski/go-farm v0.0.0-20190104051053-3adb47b1fb0f // indirect
 	github.com/gorilla/websocket v1.4.1 // indirect
 	github.com/jrick/logrotate v1.0.0
+	github.com/junyang100/dcrnlibwallet/spv v0.0.0-00010101000000-000000000000
 	github.com/kevinburke/nacl v0.0.0-20190829012316-f3ed23dbd7f8
 	github.com/onsi/ginkgo v1.8.0
 	github.com/onsi/gomega v1.5.0
 	github.com/pkg/errors v0.8.1 // indirect
-	github.com/planetdecred/dcrlibwallet/spv v0.0.0-00010101000000-000000000000
 	github.com/stretchr/testify v1.3.0 // indirect
 	go.etcd.io/bbolt v1.3.3
 	golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550
@@ -46,7 +46,7 @@ require (
 replace (
 	decred.org/dcrwallet => decred.org/dcrwallet v1.2.3-0.20191024200307-d273b5687adf
 	github.com/decred/dcrwallet/wallet/v3 => github.com/raedahgroup/dcrwallet/wallet/v3 v3.2.1-badger
-	github.com/planetdecred/dcrlibwallet/spv => ./spv
+	github.com/junyang100/dcrnlibwallet/spv => ./spv
 )
 
 go 1.13
