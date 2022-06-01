@@ -30,6 +30,7 @@ require (
 	github.com/dgraph-io/badger v1.5.4
 	github.com/dgryski/go-farm v0.0.0-20190104051053-3adb47b1fb0f // indirect
 	github.com/gorilla/websocket v1.4.1 // indirect
+	github.com/jinzhu/copier v0.3.5
 	github.com/jrick/logrotate v1.0.0
 	github.com/junyang100/dcrnlibwallet/spv v0.0.0-00010101000000-000000000000
 	github.com/kevinburke/nacl v0.0.0-20190829012316-f3ed23dbd7f8
