@@ -176,7 +176,7 @@ func (wallet *Wallet) TicketPrice(ctx context.Context) (*TicketPriceResponse, er
 	}, nil
 }
 
-func (wallet *Wallet) TestForPurchase(address string) (string, error) {
+func (wallet *Wallet) TestForPurchase(request *PurchaseTicketsRequest) (string, error) {
 	return "TestForPurchase", nil
 }
 
