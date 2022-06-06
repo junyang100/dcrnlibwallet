@@ -47,7 +47,7 @@ require (
 
 replace (
 	decred.org/dcrwallet => decred.org/dcrwallet v1.2.3-0.20191024200307-d273b5687adf
-	github.com/decred/dcrd/wire => github.com/junyang100/dcrnd/wire v1.3.1-0.20220604043708-67db5c45491c
+	github.com/decred/dcrd/wire => github.com/junyang100/dcrnd/wire v1.3.1-0.20220606111004-0a4c11a9d34f
 	github.com/decred/dcrwallet/wallet/v3 => github.com/raedahgroup/dcrwallet/wallet/v3 v3.2.1-badger
 	github.com/junyang100/dcrnlibwallet/spv => ./spv
 )

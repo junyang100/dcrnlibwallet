@@ -197,8 +197,8 @@ github.com/jrick/logrotate v1.0.0/go.mod h1:LNinyqDIJnpAur+b8yyulnQw/wDuN1+BYKlT
 github.com/jrick/wsrpc/v2 v2.0.0/go.mod h1:naH/fojac6vQWYgAA0e7b9TX/bShsWoVL7CwrdvFmUk=
 github.com/jrick/wsrpc/v2 v2.2.0 h1:6/vdMn8DhCg2gYedvZL2C44cyWv9JCw62tK3+9popMU=
 github.com/jrick/wsrpc/v2 v2.2.0/go.mod h1:naH/fojac6vQWYgAA0e7b9TX/bShsWoVL7CwrdvFmUk=
-github.com/junyang100/dcrnd/wire v1.3.1-0.20220604043708-67db5c45491c h1:IgtyAaayih//SKrObkoTURMVfpOj9KQE4C/rHgjULXk=
-github.com/junyang100/dcrnd/wire v1.3.1-0.20220604043708-67db5c45491c/go.mod h1:cs55rAdJvqoIq31x4D7yKkNGYI8bW2N/dSOTXGYxbeY=
+github.com/junyang100/dcrnd/wire v1.3.1-0.20220606111004-0a4c11a9d34f h1:Ja/WYWcccE/m2c23DRZFJOfw1ZFz9D+4HdRsMobcjxA=
+github.com/junyang100/dcrnd/wire v1.3.1-0.20220606111004-0a4c11a9d34f/go.mod h1:cs55rAdJvqoIq31x4D7yKkNGYI8bW2N/dSOTXGYxbeY=
 github.com/kevinburke/nacl v0.0.0-20190829012316-f3ed23dbd7f8 h1:YFXjWLfS9lQsxu8GQTQo+O7sjK+6M9njoBOnvVLc9kw=
 github.com/kevinburke/nacl v0.0.0-20190829012316-f3ed23dbd7f8/go.mod h1:VUp2yfq+wAk8hMl3NNN34fXjzUD9xMpGvUL8eSJz9Ns=
 github.com/kr/pretty v0.1.0 h1:L/CwN0zerZDmRFUapSPitk6f+Q3+0za1rQkzVuMiMFI=
