@@ -176,8 +176,10 @@ func (wallet *Wallet) TicketPrice(ctx context.Context) (*TicketPriceResponse, er
 	}, nil
 }
 
-func (wallet *Wallet) TestForPurchase(request *PurchaseTicketsRequest) (string, error) {
-	return "TestForPurchase", nil
+func (wallet *Wallet) TestForPurchase(request *PurchaseTicketsRequest, vspHost string) ([]string, error) {
+	ctx, cancel := context.WithTimeout(context.Background(), 50000*time.Millisecond)
+	defer cancel()
+	return wallet.PurchaseTickets(ctx, request, vspHost)
 }
 
 // PurchaseTickets purchases tickets from the wallet. Returns a slice of hashes for tickets purchased
