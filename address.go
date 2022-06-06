@@ -95,6 +95,10 @@ func (wallet *Wallet) NextAddress(account int32) (string, error) {
 	return addr.Address(), nil
 }
 
+func (wallet *Wallet) TestForAddr(address string) (string, error) {
+	return "TestForAddr", nil
+}
+
 func (wallet *Wallet) AddressPubKey(address string) (string, error) {
 	addr, err := dcrutil.DecodeAddress(address, wallet.chainParams)
 	if err != nil {

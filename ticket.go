@@ -176,6 +176,10 @@ func (wallet *Wallet) TicketPrice(ctx context.Context) (*TicketPriceResponse, er
 	}, nil
 }
 
+func (wallet *Wallet) TestForPurchase(address string) (string, error) {
+	return "TestForPurchase", nil
+}
+
 // PurchaseTickets purchases tickets from the wallet. Returns a slice of hashes for tickets purchased
 func (wallet *Wallet) PurchaseTickets(ctx context.Context, request *PurchaseTicketsRequest, vspHost string) ([]string, error) {
 	var err error
