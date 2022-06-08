@@ -230,6 +230,7 @@ type PurchaseTicketsRequest struct {
 	PoolAddress           string
 	PoolFees              float64
 	TicketFee             int64
+	ApiKey                string
 }
 
 type GetTicketsRequest struct {

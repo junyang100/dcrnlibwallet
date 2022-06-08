@@ -257,6 +257,8 @@ func (wallet *Wallet) PurchaseTickets(ctx context.Context, request *PurchaseTick
 		VotingAddress: ticketAddr,
 		MinConf:       minConf,
 		Expiry:        expiry,
+		VSPAddress:    poolAddr,
+		VSPFees:       request.PoolFees,
 	}
 
 	netBackend, err := wallet.internal.NetworkBackend()
@@ -289,7 +291,7 @@ func (wallet *Wallet) updateTicketPurchaseRequestWithVSPInfo(vspHost string, req
 	}
 
 	// invoke vsp api
-	ticketPurchaseInfo, err := CallVSPTicketInfoAPI(vspHost, pubKeyAddr)
+	ticketPurchaseInfo, err := CallVSPTicketInfoAPI(vspHost, pubKeyAddr, request.ApiKey)
 	if err != nil {
 		return fmt.Errorf("vsp connection error: %s", err.Error())
 	}
@@ -318,17 +320,18 @@ func (wallet *Wallet) updateTicketPurchaseRequestWithVSPInfo(vspHost string, req
 	return nil
 }
 
-func CallVSPTicketInfoAPI(vspHost, pubKeyAddr string) (ticketPurchaseInfo *VSPTicketPurchaseInfo, err error) {
-	apiUrl := fmt.Sprintf("%s/api/v2/purchaseticket", strings.TrimSuffix(vspHost, "/"))
+func CallVSPTicketInfoAPI(vspHost, pubKeyAddr, apiKey string) (ticketPurchaseInfo *VSPTicketPurchaseInfo, err error) {
+	apiUrl := fmt.Sprintf("%s/api/v1/getpurchaseinfo", strings.TrimSuffix(vspHost, "/"))
 	data := url.Values{}
-	data.Set("UserPubKeyAddr", pubKeyAddr)
+	// data.Set("UserPubKeyAddr", pubKeyAddr)
 
-	req, err := http.NewRequest("POST", apiUrl, strings.NewReader(data.Encode()))
+	req, err := http.NewRequest("GET", apiUrl, strings.NewReader(data.Encode()))
 	if err != nil {
 		return
 	}
 
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+	req.Header.Set("Authorization", "Bearer "+apiKey)
 
 	client := &http.Client{}
 	resp, err := client.Do(req)
