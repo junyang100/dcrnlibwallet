@@ -176,10 +176,13 @@ func (wallet *Wallet) TicketPrice(ctx context.Context) (*TicketPriceResponse, er
 	}, nil
 }
 
-func (wallet *Wallet) TestForPurchase(request *PurchaseTicketsRequest, vspHost string) ([]string, error) {
-	ctx, cancel := context.WithTimeout(context.Background(), 50000*time.Millisecond)
-	defer cancel()
-	return wallet.PurchaseTickets(ctx, request, vspHost)
+func (wallet *Wallet) PurchaseTicketsForMobile(request *PurchaseTicketsRequest, vspHost string) (string, error) {
+	ctx := context.Background()
+	hashes, err := wallet.PurchaseTickets(ctx, request, vspHost)
+	if err != nil {
+		return "", err
+	}
+	return strings.Join(hashes, ","), err
 }
 
 // PurchaseTickets purchases tickets from the wallet. Returns a slice of hashes for tickets purchased
