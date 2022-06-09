@@ -107,22 +107,22 @@ func (wallet *Wallet) getTickets(req *GetTicketsRequest) (ticketInfos []*TicketI
 			// t.Spender and t.Spender.Hash are pointers, avoid using them directly
 			// as they could be re-used to hold information for some other ticket.
 			// See the doc on `wallet.GetTickets`.
-			spenderHash, _ := chainhash.NewHash(t.Spender.Hash[:])
-			spender := &w.TransactionSummary{
-				Hash:        spenderHash,
-				Transaction: t.Spender.Transaction,
-				MyInputs:    t.Spender.MyInputs,
-				MyOutputs:   t.Spender.MyOutputs,
-				Fee:         t.Spender.Fee,
-				Timestamp:   t.Spender.Timestamp,
-				Type:        t.Spender.Type,
-			}
+			// spenderHash, _ := chainhash.NewHash(t.Spender.Hash[:])
+			// spender := &w.TransactionSummary{
+			// 	Hash:        spenderHash,
+			// 	Transaction: t.Spender.Transaction,
+			// 	MyInputs:    t.Spender.MyInputs,
+			// 	MyOutputs:   t.Spender.MyOutputs,
+			// 	Fee:         t.Spender.Fee,
+			// 	Timestamp:   t.Spender.Timestamp,
+			// 	Type:        t.Spender.Type,
+			// }
 
 			ticketInfos = append(ticketInfos, &TicketInfo{
 				BlockHeight: blockHeight,
 				Status:      ticketStatusString(t.Status),
 				Ticket:      ticket,
-				Spender:     spender,
+				Spender:     nil,
 			})
 		}
 
