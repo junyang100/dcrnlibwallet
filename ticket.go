@@ -22,17 +22,27 @@ import (
 
 type StakeInfoForMobile struct {
 	BlockHeight    int64
-	OwnMempoolTix  uint32
-	Unspent        uint32
-	Voted          uint32
-	Revoked        uint32
-	UnspentExpired uint32
-	PoolSize       uint32
-	AllMempoolTix  uint32
-	Immature       uint32
-	Live           uint32
-	Missed         uint32
-	Expired        uint32
+	OwnMempoolTix  int32
+	Unspent        int32
+	Voted          int32
+	Revoked        int32
+	UnspentExpired int32
+	PoolSize       int32
+	AllMempoolTix  int32
+	Immature       int32
+	Live           int32
+	Missed         int32
+	Expired        int32
+}
+
+func (wallet *Wallet) StakeInfoForMobile() (*StakeInfoForMobile, error) {
+	data, err := wallet.StakeInfo()
+	if err != nil {
+		return nil, err
+	}
+	resp := &StakeInfoForMobile{}
+	copier.Copy(resp, data)
+	return resp, err
 }
 
 // StakeInfo returns information about wallet stakes, tickets and their statuses.
@@ -50,16 +60,6 @@ func (wallet *Wallet) StakeInfo() (*w.StakeInfoData, error) {
 	}
 
 	return wallet.internal.StakeInfo(ctx)
-}
-
-func (wallet *Wallet) StakeInfoForMobile() (*StakeInfoForMobile, error) {
-	data, err := wallet.StakeInfo()
-	if err != nil {
-		return nil, err
-	}
-	resp := &StakeInfoForMobile{}
-	copier.Copy(resp, data)
-	return resp, err
 }
 
 func (wallet *Wallet) GetTickets(startingBlockHash, endingBlockHash []byte, targetCount int32) ([]*TicketInfo, error) {
@@ -170,6 +170,11 @@ func (wallet *Wallet) getTickets(req *GetTicketsRequest) (ticketInfos []*TicketI
 	}
 
 	return
+}
+
+func (wallet *Wallet) TicketPriceForMobile() (*TicketPriceResponse, error) {
+	ctx := context.Background()
+	return wallet.TicketPrice(ctx)
 }
 
 // TicketPrice returns the price of a ticket for the next block, also known as the stake difficulty.
