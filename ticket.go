@@ -35,6 +35,12 @@ type StakeInfoForMobile struct {
 	Expired        int32
 }
 
+type TicketInfoForMobile struct {
+	Hash        string
+	BlockHeight int32
+	Status      string
+}
+
 func (wallet *Wallet) StakeInfoForMobile() (*StakeInfoForMobile, error) {
 	data, err := wallet.StakeInfo()
 	if err != nil {
@@ -68,6 +74,30 @@ func (wallet *Wallet) GetTickets(startingBlockHash, endingBlockHash []byte, targ
 		EndingBlockHash:   endingBlockHash,
 		TargetTicketCount: targetCount,
 	})
+}
+
+func (wallet *Wallet) GetTicketsForMobile(startHeight, endHeight, targetCount int32) (string, error) {
+	tickets, err := wallet.getTickets(&GetTicketsRequest{
+		StartingBlockHeight: startHeight,
+		EndingBlockHeight:   endHeight,
+		TargetTicketCount:   targetCount,
+	})
+	if err != nil {
+		return "", err
+	}
+	var rs []TicketInfoForMobile
+	for _, t := range tickets {
+		rs = append(rs, TicketInfoForMobile{
+			Hash:        t.Ticket.Hash.String(),
+			BlockHeight: t.BlockHeight,
+			Status:      t.Status,
+		})
+	}
+	j, err := json.Marshal(rs)
+	if err != nil {
+		return "", err
+	}
+	return string(j), err
 }
 
 func (wallet *Wallet) GetTicketsForBlockHeightRange(startHeight, endHeight, targetCount int32) ([]*TicketInfo, error) {
