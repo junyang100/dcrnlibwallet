@@ -21,20 +21,18 @@ import (
 )
 
 type StakeInfoForMobile struct {
-	BlockHeight int64
-
+	BlockHeight    int64
 	OwnMempoolTix  uint32
 	Unspent        uint32
 	Voted          uint32
 	Revoked        uint32
 	UnspentExpired uint32
-
-	PoolSize      uint32
-	AllMempoolTix uint32
-	Immature      uint32
-	Live          uint32
-	Missed        uint32
-	Expired       uint32
+	PoolSize       uint32
+	AllMempoolTix  uint32
+	Immature       uint32
+	Live           uint32
+	Missed         uint32
+	Expired        uint32
 }
 
 // StakeInfo returns information about wallet stakes, tickets and their statuses.
