@@ -3,7 +3,7 @@ module github.com/junyang100/dcrnlibwallet
 require (
 	github.com/AndreasBriese/bbloom v0.0.0-20190306092124-e2d15f34fcf9 // indirect
 	github.com/DataDog/zstd v1.3.5 // indirect
-	github.com/Decred-Next/dcrnd/chaincfg/v3 v3.0.0-20220601060947-6898b68a45b5
+	github.com/Decred-Next/dcrnd/chaincfg/v3 v3.0.0-20220610010744-14819c8efd43
 	github.com/asdine/storm v0.0.0-20190216191021-fe89819f6282
 	github.com/decred/dcrd/addrmgr v1.1.0
 	github.com/decred/dcrd/blockchain/stake v1.2.1 // indirect
