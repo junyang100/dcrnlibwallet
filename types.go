@@ -220,11 +220,11 @@ type TransactionDestination struct {
 /** begin ticket-related types */
 
 type PurchaseTicketsRequest struct {
-	Account               uint32
-	RequiredConfirmations uint32
-	NumTickets            uint32
+	Account               int32
+	RequiredConfirmations int32
+	NumTickets            int32
 	Passphrase            []byte
-	Expiry                uint32
+	Expiry                int32
 	TxFee                 int64
 	TicketAddress         string
 	PoolAddress           string

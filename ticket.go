@@ -341,7 +341,7 @@ func (wallet *Wallet) PurchaseTickets(ctx context.Context, request *PurchaseTick
 
 	purchaseTicketsRequest := &w.PurchaseTicketsRequest{
 		Count:         numTickets,
-		SourceAccount: request.Account,
+		SourceAccount: uint32(request.Account),
 		VotingAddress: ticketAddr,
 		MinConf:       minConf,
 		Expiry:        expiry,
