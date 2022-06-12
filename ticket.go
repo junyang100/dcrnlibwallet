@@ -43,6 +43,11 @@ type TicketInfoForMobile struct {
 	Reward      int32
 }
 
+type PurchaseInfoForMobile struct {
+	TicketFee int64
+	TxFee     int64
+}
+
 func (wallet *Wallet) StakeInfoForMobile() (*StakeInfoForMobile, error) {
 	data, err := wallet.StakeInfo()
 	if err != nil {
@@ -51,6 +56,12 @@ func (wallet *Wallet) StakeInfoForMobile() (*StakeInfoForMobile, error) {
 	resp := &StakeInfoForMobile{}
 	copier.Copy(resp, data)
 	return resp, err
+}
+
+func (wallet *Wallet) PurchaseInfoForMobile() *PurchaseInfoForMobile {
+	ticketFee := wallet.internal.TicketFeeIncrement()
+	txFee := wallet.internal.RelayFee()
+	return &PurchaseInfoForMobile{TicketFee: int64(ticketFee), TxFee: int64(txFee)}
 }
 
 // StakeInfo returns information about wallet stakes, tickets and their statuses.
