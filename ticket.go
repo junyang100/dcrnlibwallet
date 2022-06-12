@@ -39,6 +39,8 @@ type TicketInfoForMobile struct {
 	Hash        string
 	BlockHeight int32
 	Status      string
+	Price       int32
+	Reward      int32
 }
 
 func (wallet *Wallet) StakeInfoForMobile() (*StakeInfoForMobile, error) {
@@ -87,10 +89,16 @@ func (wallet *Wallet) GetTicketsForMobile(startHeight, endHeight, targetCount in
 	}
 	var rs []TicketInfoForMobile
 	for _, t := range tickets {
+		var reward int32 = 0
+		if t.Spender != nil {
+			reward = int32(t.Spender.MyOutputs[0].Amount)
+		}
 		rs = append(rs, TicketInfoForMobile{
 			Hash:        t.Ticket.Hash.String(),
 			BlockHeight: t.BlockHeight,
 			Status:      t.Status,
+			Price:       int32(t.Ticket.MyOutputs[0].Amount),
+			Reward:      reward,
 		})
 	}
 	j, err := json.Marshal(rs)
@@ -163,23 +171,28 @@ func (wallet *Wallet) getTickets(req *GetTicketsRequest) (ticketInfos []*TicketI
 			// t.Spender and t.Spender.Hash are pointers, avoid using them directly
 			// as they could be re-used to hold information for some other ticket.
 			// See the doc on `wallet.GetTickets`.
-			// spenderHash, _ := chainhash.NewHash(t.Spender.Hash[:])
-			// spender := &w.TransactionSummary{
-			// 	Hash:        spenderHash,
-			// 	Transaction: t.Spender.Transaction,
-			// 	MyInputs:    t.Spender.MyInputs,
-			// 	MyOutputs:   t.Spender.MyOutputs,
-			// 	Fee:         t.Spender.Fee,
-			// 	Timestamp:   t.Spender.Timestamp,
-			// 	Type:        t.Spender.Type,
-			// }
+			var spender *w.TransactionSummary
+			if t.Spender != nil {
+				spenderHash, _ := chainhash.NewHash(t.Spender.Hash[:])
+				spender = &w.TransactionSummary{
+					Hash:        spenderHash,
+					Transaction: t.Spender.Transaction,
+					MyInputs:    t.Spender.MyInputs,
+					MyOutputs:   t.Spender.MyOutputs,
+					Fee:         t.Spender.Fee,
+					Timestamp:   t.Spender.Timestamp,
+					Type:        t.Spender.Type,
+				}
+
+			}
 
 			ticketInfos = append(ticketInfos, &TicketInfo{
 				BlockHeight: blockHeight,
 				Status:      ticketStatusString(t.Status),
 				Ticket:      ticket,
-				Spender:     nil,
+				Spender:     spender,
 			})
+
 		}
 
 		return (targetTicketCount > 0) && (len(ticketInfos) >= targetTicketCount), nil
