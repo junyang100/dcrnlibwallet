@@ -33,6 +33,7 @@ type StakeInfoForMobile struct {
 	Live           int32
 	Missed         int32
 	Expired        int32
+	TotalSubsidy   int64
 }
 
 type TicketInfoForMobile struct {
