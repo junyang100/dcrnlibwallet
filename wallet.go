@@ -8,12 +8,12 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/Decred-Next/dcrnlibwallet/internal/loader"
+	"github.com/Decred-Next/dcrnlibwallet/txindex"
 	"github.com/decred/dcrd/chaincfg/v2"
 	"github.com/decred/dcrwallet/errors/v2"
 	w "github.com/decred/dcrwallet/wallet/v3"
 	"github.com/decred/dcrwallet/walletseed"
-	"github.com/junyang100/dcrnlibwallet/internal/loader"
-	"github.com/junyang100/dcrnlibwallet/txindex"
 )
 
 type Wallet struct {

@@ -11,12 +11,12 @@ import (
 	"path/filepath"
 	"sync"
 
+	_ "github.com/Decred-Next/dcrnlibwallet/badgerdb" // initialize badger driver
 	"github.com/decred/dcrd/chaincfg/v2"
 	"github.com/decred/dcrd/dcrutil/v2"
 	"github.com/decred/dcrwallet/errors/v2"
 	"github.com/decred/dcrwallet/wallet/v3"
 	_ "github.com/decred/dcrwallet/wallet/v3/drivers/bdb" // driver loaded during init
-	_ "github.com/junyang100/dcrnlibwallet/badgerdb"      // initialize badger driver
 )
 
 const (

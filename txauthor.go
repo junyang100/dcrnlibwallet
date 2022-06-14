@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/Decred-Next/dcrnlibwallet/txhelper"
 	"github.com/decred/dcrd/dcrutil/v2"
 	"github.com/decred/dcrd/txscript/v2"
 	"github.com/decred/dcrd/wire"
@@ -13,7 +14,6 @@ import (
 	w "github.com/decred/dcrwallet/wallet/v3"
 	"github.com/decred/dcrwallet/wallet/v3/txauthor"
 	"github.com/decred/dcrwallet/wallet/v3/txrules"
-	"github.com/junyang100/dcrnlibwallet/txhelper"
 )
 
 type TxAuthor struct {

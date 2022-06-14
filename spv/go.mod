@@ -1,4 +1,4 @@
-module github.com/junyang100/dcrnlibwallet/spv
+module github.com/Decred-Next/dcrnlibwallet/spv
 
 go 1.12
 

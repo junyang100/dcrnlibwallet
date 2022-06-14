@@ -13,6 +13,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/Decred-Next/dcrnlibwallet/internal/loader"
 	"github.com/decred/dcrd/chaincfg/v2"
 	"github.com/decred/dcrd/dcrutil/v2"
 	"github.com/decred/dcrd/hdkeychain/v2"
@@ -20,7 +21,6 @@ import (
 	"github.com/decred/dcrwallet/wallet/v3"
 	"github.com/decred/dcrwallet/wallet/v3/txrules"
 	"github.com/decred/dcrwallet/walletseed"
-	"github.com/junyang100/dcrnlibwallet/internal/loader"
 )
 
 const (

@@ -1,9 +1,9 @@
 package txindex
 
 import (
+	"github.com/Decred-Next/dcrnlibwallet/txhelper"
 	"github.com/asdine/storm"
 	"github.com/asdine/storm/q"
-	"github.com/junyang100/dcrnlibwallet/txhelper"
 )
 
 const (

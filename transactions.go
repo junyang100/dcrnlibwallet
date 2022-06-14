@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"sort"
 
+	"github.com/Decred-Next/dcrnlibwallet/txhelper"
+	"github.com/Decred-Next/dcrnlibwallet/txindex"
 	"github.com/asdine/storm"
 	"github.com/decred/dcrd/chaincfg/chainhash"
-	"github.com/junyang100/dcrnlibwallet/txhelper"
-	"github.com/junyang100/dcrnlibwallet/txindex"
 )
 
 const (

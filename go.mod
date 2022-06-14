@@ -1,9 +1,10 @@
-module github.com/junyang100/dcrnlibwallet
+module github.com/Decred-Next/dcrnlibwallet
 
 require (
 	github.com/AndreasBriese/bbloom v0.0.0-20190306092124-e2d15f34fcf9 // indirect
 	github.com/DataDog/zstd v1.3.5 // indirect
 	github.com/Decred-Next/dcrnd/chaincfg/v3 v3.0.0-20220610010744-14819c8efd43
+	github.com/Decred-Next/dcrnlibwallet/spv v0.0.0-00010101000000-000000000000
 	github.com/asdine/storm v0.0.0-20190216191021-fe89819f6282
 	github.com/decred/dcrd/addrmgr v1.1.0
 	github.com/decred/dcrd/blockchain/stake v1.2.1 // indirect
@@ -32,7 +33,6 @@ require (
 	github.com/gorilla/websocket v1.4.1 // indirect
 	github.com/jinzhu/copier v0.3.5
 	github.com/jrick/logrotate v1.0.0
-	github.com/junyang100/dcrnlibwallet/spv v0.0.0-00010101000000-000000000000
 	github.com/kevinburke/nacl v0.0.0-20190829012316-f3ed23dbd7f8
 	github.com/onsi/ginkgo v1.8.0
 	github.com/onsi/gomega v1.5.0
@@ -47,9 +47,10 @@ require (
 
 replace (
 	decred.org/dcrwallet => decred.org/dcrwallet v1.2.3-0.20191024200307-d273b5687adf
+	github.com/Decred-Next/dcrnlibwallet => ../github.com/junyang100/dcrnlibwallet
+	github.com/Decred-Next/dcrnlibwallet/spv => ./spv
 	github.com/decred/dcrd/wire => github.com/junyang100/dcrnd/wire v1.3.1-0.20220610024544-54f4b2ae8e82
 	github.com/decred/dcrwallet/wallet/v3 => github.com/raedahgroup/dcrwallet/wallet/v3 v3.2.1-badger
-	github.com/junyang100/dcrnlibwallet/spv => ./spv
 )
 
 go 1.13

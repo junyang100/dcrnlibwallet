@@ -10,13 +10,13 @@ import (
 	"sync"
 	"time"
 
+	"github.com/Decred-Next/dcrnlibwallet/txindex"
+	"github.com/Decred-Next/dcrnlibwallet/utils"
 	"github.com/asdine/storm"
 	"github.com/asdine/storm/q"
 	"github.com/decred/dcrd/chaincfg/v2"
 	"github.com/decred/dcrwallet/errors/v2"
 	w "github.com/decred/dcrwallet/wallet/v3"
-	"github.com/junyang100/dcrnlibwallet/txindex"
-	"github.com/junyang100/dcrnlibwallet/utils"
 	bolt "go.etcd.io/bbolt"
 
 	"golang.org/x/crypto/bcrypt"

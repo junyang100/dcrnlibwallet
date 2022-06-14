@@ -1,8 +1,8 @@
 package txhelper
 
 import (
+	"github.com/Decred-Next/dcrnlibwallet/addresshelper"
 	"github.com/decred/dcrd/dcrutil/v2"
-	"github.com/junyang100/dcrnlibwallet/addresshelper"
 )
 
 const scriptVersion = 0

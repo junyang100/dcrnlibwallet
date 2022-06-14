@@ -8,6 +8,8 @@ package dcrlibwallet
 import (
 	"os"
 
+	"github.com/Decred-Next/dcrnlibwallet/internal/loader"
+	"github.com/Decred-Next/dcrnlibwallet/spv"
 	"github.com/decred/dcrd/addrmgr"
 	"github.com/decred/dcrd/connmgr/v2"
 	"github.com/decred/dcrwallet/errors"
@@ -17,8 +19,6 @@ import (
 	"github.com/decred/dcrwallet/wallet/v3/udb"
 	"github.com/decred/slog"
 	"github.com/jrick/logrotate/rotator"
-	"github.com/junyang100/dcrnlibwallet/internal/loader"
-	"github.com/junyang100/dcrnlibwallet/spv"
 )
 
 // logWriter implements an io.Writer that outputs to both standard output and

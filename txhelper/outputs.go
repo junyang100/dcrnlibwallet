@@ -1,9 +1,9 @@
 package txhelper
 
 import (
+	"github.com/Decred-Next/dcrnlibwallet/addresshelper"
 	dcrutil "github.com/decred/dcrd/dcrutil/v2"
 	"github.com/decred/dcrd/wire"
-	"github.com/junyang100/dcrnlibwallet/addresshelper"
 )
 
 func MakeTxOutput(address string, amountInAtom int64, net dcrutil.AddressParams) (output *wire.TxOut, err error) {

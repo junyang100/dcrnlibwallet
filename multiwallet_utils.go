@@ -5,10 +5,10 @@ import (
 	"os"
 	"path/filepath"
 
+	"github.com/Decred-Next/dcrnlibwallet/spv"
 	"github.com/asdine/storm"
 	"github.com/decred/dcrwallet/errors/v2"
 	w "github.com/decred/dcrwallet/wallet/v3"
-	"github.com/junyang100/dcrnlibwallet/spv"
 	"github.com/kevinburke/nacl"
 	"github.com/kevinburke/nacl/secretbox"
 	"golang.org/x/crypto/scrypt"
