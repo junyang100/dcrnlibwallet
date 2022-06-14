@@ -41,7 +41,8 @@ type TicketInfoForMobile struct {
 	BlockHeight int32
 	Status      string
 	Price       int32
-	Reward      int32
+	Time        int64
+	SpendHash   string
 }
 
 type PurchaseInfoForMobile struct {
@@ -101,16 +102,17 @@ func (wallet *Wallet) GetTicketsForMobile(startHeight, endHeight, targetCount in
 	}
 	var rs []TicketInfoForMobile
 	for _, t := range tickets {
-		var reward int32 = 0
+		var sHash string
 		if t.Spender != nil {
-			reward = int32(t.Spender.MyOutputs[0].Amount)
+			sHash = t.Spender.Hash.String()
 		}
 		rs = append(rs, TicketInfoForMobile{
 			Hash:        t.Ticket.Hash.String(),
 			BlockHeight: t.BlockHeight,
 			Status:      t.Status,
 			Price:       int32(t.Ticket.MyOutputs[0].Amount),
-			Reward:      reward,
+			Time:        t.Ticket.Timestamp,
+			SpendHash:   sHash,
 		})
 	}
 	j, err := json.Marshal(rs)
