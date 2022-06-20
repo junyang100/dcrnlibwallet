@@ -105,11 +105,17 @@ func (wallet *Wallet) GetTicketsForMobile(startHeight, endHeight, targetCount in
 	for _, t := range tickets {
 		var sHash string
 		var reward int64
-		var ticketInvestment dcrutil.Amount
-		for _, input := range t.Ticket.MyInputs {
-			ticketInvestment += input.PreviousAmount
+		var price int64
+		if len(t.Ticket.MyOutputs) == 0 {
+			hash := t.Ticket.Hash[:]
+			tx, err := wallet.GetTransactionRaw(hash)
+			if err != nil {
+				continue
+			}
+			price = tx.Outputs[0].Amount
+		} else {
+			price = int64(t.Ticket.MyOutputs[0].Amount)
 		}
-		price := int64(ticketInvestment - t.Ticket.Fee)
 		if t.Spender != nil {
 			sHash = t.Spender.Hash.String()
 			if t.Status == "VOTED" {
