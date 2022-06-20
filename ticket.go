@@ -105,7 +105,11 @@ func (wallet *Wallet) GetTicketsForMobile(startHeight, endHeight, targetCount in
 	for _, t := range tickets {
 		var sHash string
 		var reward int64
-		price := int64(t.Ticket.MyOutputs[0].Amount)
+		var ticketInvestment dcrutil.Amount
+		for _, input := range t.Ticket.MyInputs {
+			ticketInvestment += input.PreviousAmount
+		}
+		price := int64(ticketInvestment - t.Ticket.Fee)
 		if t.Spender != nil {
 			sHash = t.Spender.Hash.String()
 			if t.Status == "VOTED" {
@@ -240,6 +244,16 @@ func (wallet *Wallet) TicketPriceForMobile() (*TicketPriceResponse, error) {
 	ctx := context.Background()
 	return wallet.TicketPrice(ctx)
 }
+
+// func (wallet *Wallet) ImportScript(script string) {
+// 	rs, err := hex.DecodeString(script)
+// 	if err != nil {
+// 		fmt.Errorf("invalid vsp purchase ticket response: %s", err.Error())
+// 	}
+// 	// lock := make(chan time.Time, 1)
+// 	ctx := wallet.shutdownContext()
+// 	wallet.internal.ImportScript(ctx, rs)
+// }
 
 // TicketPrice returns the price of a ticket for the next block, also known as the stake difficulty.
 // May be incorrect if blockchain sync is ongoing or if blockchain is not up-to-date.
