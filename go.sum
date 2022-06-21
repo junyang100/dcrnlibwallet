@@ -137,8 +137,6 @@ github.com/decred/dcrdata/semver v1.0.0 h1:DBqYU/x+4LqHq/3r4xKdF6xG5ewktG2KDC+g/
 github.com/decred/dcrdata/semver v1.0.0/go.mod h1:z+nQqiAd9fYkHhBLbejysZ2FPHtgkrErWDgMf+JlZWE=
 github.com/decred/dcrdata/txhelpers v1.1.0 h1:xKK+1/OASkSxMe/KDLaLJeJjJdopgC+FV8+EFPpJAGk=
 github.com/decred/dcrdata/txhelpers v1.1.0/go.mod h1:IyxuqUxIPrHnOmRy9DCl90oqw7FxYHde/fkIkF21B7w=
-github.com/decred/dcrwallet/deployments/v2 v2.0.0 h1:sSjkc87hcDFGoLMTIwNt5ze+rCHbholqyM8Z3H9k5CE=
-github.com/decred/dcrwallet/deployments/v2 v2.0.0/go.mod h1:fY1HV1vIeeY5bHjrMknUhB/ZOVIfthBiUlSgRqFFKrg=
 github.com/decred/dcrwallet/errors v1.0.0/go.mod h1:XUm95dWmm9XmQGvneBXJkkIaFeRsQVBB6ni/KTy1hrY=
 github.com/decred/dcrwallet/errors v1.0.1/go.mod h1:XUm95dWmm9XmQGvneBXJkkIaFeRsQVBB6ni/KTy1hrY=
 github.com/decred/dcrwallet/errors v1.1.0 h1:xDzE4l8AGLcL1CGigPR9vYHP/rBmMm34ZatolleOS9A=
@@ -199,6 +197,8 @@ github.com/jrick/wsrpc/v2 v2.2.0 h1:6/vdMn8DhCg2gYedvZL2C44cyWv9JCw62tK3+9popMU=
 github.com/jrick/wsrpc/v2 v2.2.0/go.mod h1:naH/fojac6vQWYgAA0e7b9TX/bShsWoVL7CwrdvFmUk=
 github.com/junyang100/dcrnd/wire v1.3.1-0.20220610024544-54f4b2ae8e82 h1:JUcyqDWoyATNLwK+L9uKTdOnL/Qykbr8WT4PG2AJCS0=
 github.com/junyang100/dcrnd/wire v1.3.1-0.20220610024544-54f4b2ae8e82/go.mod h1:cs55rAdJvqoIq31x4D7yKkNGYI8bW2N/dSOTXGYxbeY=
+github.com/junyang100/dcrnwallet/deployments v1.1.1-0.20220621091240-0dcf9c828f6e h1:9O0CAtl2BawL3zgLUQPR1oN5tGFjFk+Q3gFB7pBktBY=
+github.com/junyang100/dcrnwallet/deployments v1.1.1-0.20220621091240-0dcf9c828f6e/go.mod h1:a5FWehKk0zYo4Q6tX80YueBURjZdQB7IuNVH9M+daUQ=
 github.com/kevinburke/nacl v0.0.0-20190829012316-f3ed23dbd7f8 h1:YFXjWLfS9lQsxu8GQTQo+O7sjK+6M9njoBOnvVLc9kw=
 github.com/kevinburke/nacl v0.0.0-20190829012316-f3ed23dbd7f8/go.mod h1:VUp2yfq+wAk8hMl3NNN34fXjzUD9xMpGvUL8eSJz9Ns=
 github.com/kr/pretty v0.1.0 h1:L/CwN0zerZDmRFUapSPitk6f+Q3+0za1rQkzVuMiMFI=
