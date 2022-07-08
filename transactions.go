@@ -74,9 +74,9 @@ func (wallet *Wallet) GetTransactionRaw(txHash []byte) (*Transaction, error) {
 	return wallet.decodeTransactionWithTxSummary(txSummary, blockHash)
 }
 
-// func (wallet *Wallet) GetTransactionsForIos(newestFirst bool, offset, limit, txFilter int32) (string, error) {
-// 	return wallet.GetTransactions(offset, limit, txFilter, newestFirst)
-// }
+func (wallet *Wallet) GetTransactionsForIos(newestFirst bool, offset, limit, txFilter int32) (string, error) {
+	return wallet.GetTransactions(offset, limit, txFilter, newestFirst)
+}
 
 func (wallet *Wallet) GetTransactions(offset, limit, txFilter int32, newestFirst bool) (string, error) {
 	transactions, err := wallet.GetTransactionsRaw(offset, limit, txFilter, newestFirst)
@@ -97,9 +97,9 @@ func (wallet *Wallet) GetTransactionsRaw(offset, limit, txFilter int32, newestFi
 	return
 }
 
-// func (mw *MultiWallet) GetTransactionsForIos(newestFirst bool, offset, limit, txFilter int32) (string, error) {
-// 	return mw.GetTransactions(offset, limit, txFilter, newestFirst)
-// }
+func (mw *MultiWallet) GetTransactionsForIos(newestFirst bool, offset, limit, txFilter int32) (string, error) {
+	return mw.GetTransactions(offset, limit, txFilter, newestFirst)
+}
 
 func (mw *MultiWallet) GetTransactions(offset, limit, txFilter int32, newestFirst bool) (string, error) {
 	transactions := make([]Transaction, 0)
